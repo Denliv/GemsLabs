@@ -4,7 +4,7 @@ using Task3.Exceptions;
 using Task3.Interfaces;
 using Task3.Models;
 
-namespace Task3;
+namespace Task3.Generators;
 
 public abstract class VenicleGenerator
 {

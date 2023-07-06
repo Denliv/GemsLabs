@@ -1,6 +1,6 @@
 ﻿using Task3.Enums;
 
-namespace Task3;
+namespace Task3.Generators;
 
 public class SpeedGenerator
 {

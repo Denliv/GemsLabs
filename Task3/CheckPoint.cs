@@ -1,4 +1,5 @@
-﻿using Task3.Models;
+﻿using Task3.Generators;
+using Task3.Models;
 
 namespace Task3;
 
