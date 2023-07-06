@@ -5,19 +5,29 @@ namespace Task3.Models;
 public abstract class AVenicle
 {
     public VenicleColor Color { get; }
-    public abstract VenicleBodyType BodyType { get; }
+    public virtual VenicleBodyType BodyType { get; }
     public int LicensePlateNumber { get; }
     public bool HasPassenger { get; }
 
-    protected AVenicle()
+    protected AVenicle(VenicleColor color, int licensePlateNumber, bool hasPassenger)
     {
-        Color = (VenicleColor)new Random().Next(Enum.GetNames(typeof(VenicleColor)).Length);
-        LicensePlateNumber = new Random().Next(100, 1000);
-        HasPassenger = new Random().Next(0, 2) != 0;
+        Color = color;
+        LicensePlateNumber = licensePlateNumber;
+        HasPassenger = hasPassenger;
     }
 
     public virtual int GetSpeed()
     {
         return 0;
+    }
+
+    public virtual AVenicle Create(VenicleColor color, int licensePlateNumber, bool hasPassenger, int speed)
+    {
+        throw new ArgumentException("Error\n");
+    }
+
+    public override string ToString()
+    {
+        return $"VenicleBodyType : {BodyType}\nColor: {Color.ToString()}\nLicensePlateNumber: {LicensePlateNumber}\nHasPassenger: {HasPassenger}";
     }
 }
