@@ -1,8 +1,9 @@
 ﻿using Task3.Enums;
+using Task3.Interfaces;
 
 namespace Task3.Models;
 
-public class Truck : AVenicle
+public class Truck : AVenicle, IGeneratable
 {
     private int _speed;
     
@@ -23,10 +24,5 @@ public class Truck : AVenicle
     public override string ToString()
     {
         return $"VenicleSpeed: {GetSpeed()}\n" + base.ToString();
-    }
-
-    public override AVenicle Create(VenicleColor color, int licensePlateNumber, bool hasPassenger, int speed)
-    {
-        return new Truck(color, licensePlateNumber, hasPassenger, speed);
     }
 }

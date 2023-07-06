@@ -9,8 +9,6 @@ public class CheckPointStatistics
     public int CarJackersCount { get; set; }
     public int OverallSpeed { get; set; }
 
-    private int _averageSpeed;
-
     public int AverageSpeed
     {
         get => OverallSpeed / (CarsCount + BusesCount + TrucksCount);
