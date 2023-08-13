@@ -5,7 +5,7 @@ namespace Task3.Models;
 public abstract class AVenicle
 {
     public VenicleColor Color { get; }
-    public virtual VenicleBodyType BodyType { get; }
+    public abstract VenicleBodyType BodyType { get; }
     public int LicensePlateNumber { get; }
     public bool HasPassenger { get; }
 

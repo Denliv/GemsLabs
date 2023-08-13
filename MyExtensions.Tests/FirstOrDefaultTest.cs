@@ -12,9 +12,8 @@ public class FirstOrDefaultTest
     [Fact]
     public void FirstOrDefaultTestWithEmptyCollection()
     {
-        List<int> list = new List<int>();
-        Assert.Equal(0, list.FirstOrDefault());
-        Assert.Equal(0, list.FirstOrDefault(o => o >= 3));
+        Assert.Equal(0, new List<int>().FirstOrDefault());
+        Assert.Equal(0, new List<int>().FirstOrDefault(o => o >= 3));
     }
 
     [Fact]

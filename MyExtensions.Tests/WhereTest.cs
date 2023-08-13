@@ -13,7 +13,6 @@ public class WhereTest
     [Fact]
     public void WhereTestEmptyCollection()
     {
-        List<int> list = new List<int>();
-        Assert.Equal(new List<int>(), list.Where(o => o >= 3));
+        Assert.Equal(new List<int>(), new List<int>().Where(o => o >= 3));
     }
 }

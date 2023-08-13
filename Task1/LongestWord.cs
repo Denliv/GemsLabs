@@ -2,7 +2,7 @@
 {
     public class LongestWord
     {
-        public static string getLongestWord(List<string> words)
+        public static string GetLongestWord(List<string> words)
         {
             string result = string.Empty;
             foreach (string i in words)

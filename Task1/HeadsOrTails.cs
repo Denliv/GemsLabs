@@ -1,21 +1,19 @@
-﻿using System;
-
-namespace Task1
+﻿namespace Task1
 {
     public class HeadsOrTails
     {
         public static void Start()
         {
             Random random = new Random();
-            string temp = string.Empty;
+            string temp;
             int successfulTries = 0;
             int tries = 0;
             Console.WriteLine("Game started");
             do
             {
                 Console.Write("Enter number: ");
-                temp = Console.ReadLine();
-                if (temp != null && temp.Equals(random.NextInt64(2).ToString()))
+                temp = Console.ReadLine()!;
+                if (temp.Equals(random.NextInt64(2).ToString()))
                 {
                     successfulTries++;
                     Console.WriteLine("You guessed right");

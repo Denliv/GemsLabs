@@ -2,35 +2,26 @@
 
 public static class MyLinq
 {
-    public static T First<T>(this IEnumerable<T>? collection)
+    public static T First<T>(this IEnumerable<T>? collection, Predicate<T>? cond = null)
     {
-        if (collection == null || !Enumerable.Any(collection)) throw new InvalidOperationException();
-        return collection.ElementAt(0);
-    }
-
-    public static T First<T>(this IEnumerable<T>? collection, Predicate<T> cond)
-    {
-        if (collection == null || !Enumerable.Any(collection)) throw new InvalidOperationException();
-        foreach (var i in collection)
+        var enumerable = (collection ?? throw new InvalidOperationException()).ToArray();
+        if (enumerable.Length == 0) throw new InvalidOperationException();
+        foreach (var i in enumerable)
         {
-            if (i != null && cond.Invoke(i)) return i;
+            if (i != null && (cond?.Invoke(i) ?? true)) return i;
         }
 
         throw new InvalidOperationException();
     }
 
-    public static T? FirstOrDefault<T>(this IEnumerable<T>? collection)
+    public static T? FirstOrDefault<T>(this IEnumerable<T>? collection, Predicate<T>? cond = null)
     {
-        if (collection == null || !Enumerable.Any(collection)) return default;
-        return collection.ElementAt(0);
-    }
-
-    public static T? FirstOrDefault<T>(this IEnumerable<T>? collection, Predicate<T> cond)
-    {
-        if (collection == null || !Enumerable.Any(collection)) return default;
-        foreach (var i in collection)
+        if (collection == null) return default;
+        var enumerable = collection.ToArray();
+        if (enumerable.Length == 0) return default;
+        foreach (var i in enumerable)
         {
-            if (i != null && cond.Invoke(i)) return i;
+            if (i != null && (cond?.Invoke(i) ?? true)) return i;
         }
 
         return default;
@@ -39,8 +30,10 @@ public static class MyLinq
     public static IEnumerable<T> Where<T>(this IEnumerable<T>? collection, Predicate<T> cond)
     {
         var temp = new List<T>();
-        if (collection == null || !Enumerable.Any(collection)) return temp;
-        foreach (var i in collection)
+        if (collection == null) return temp;
+        var enumerable = collection.ToArray();
+        if (enumerable.Length == 0) return temp;
+        foreach (var i in enumerable)
         {
             if (i != null && cond.Invoke(i)) temp.Add(i);
         }
@@ -55,8 +48,10 @@ public static class MyLinq
 
     public static bool Any<T>(this IEnumerable<T>? collection, Predicate<T> cond)
     {
-        if (collection == null || !Enumerable.Any(collection)) return false;
-        foreach (var i in collection)
+        if (collection == null) return false;
+        var enumerable = collection.ToArray();
+        if (enumerable.Length == 0) return false;
+        foreach (var i in enumerable)
         {
             if (i != null && cond.Invoke(i)) return true;
         }

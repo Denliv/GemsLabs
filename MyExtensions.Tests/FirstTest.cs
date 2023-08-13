@@ -12,9 +12,8 @@ public class FirstTest
     [Fact]
     public void FirstTestWithEmptyCollection()
     {
-        List<int> list = new List<int>();
-        Assert.Throws<InvalidOperationException>(() => list.First());
-        Assert.Throws<InvalidOperationException>(() => list.First(o => o >= 3));
+        Assert.Throws<InvalidOperationException>(() => new List<int>().First());
+        Assert.Throws<InvalidOperationException>(() => new List<int>().First(o => o >= 3));
     }
 
     [Fact]

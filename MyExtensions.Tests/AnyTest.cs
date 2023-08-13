@@ -19,9 +19,8 @@ public class AnyTest
     [Fact]
     public void AnyTestWithEmptyCollection()
     {
-        List<int> list = new List<int>();
-        Assert.False(list.Any());
-        Assert.False(list.Any(o => o >= 3));
+        Assert.False(new List<int>().Any());
+        Assert.False(new List<int>().Any(o => o >= 3));
     }
     
     [Fact]
