@@ -22,12 +22,6 @@ public class Magazine
             AddBullet(new Bullet());
         }
     }
-    
-    public Magazine(Magazine magazine)
-    {
-        Capacity = magazine.Capacity;
-        Ammo = new Stack<Bullet>(magazine.Ammo);
-    }
 
     public Bullet? GetBullet()
     {

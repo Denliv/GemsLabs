@@ -12,7 +12,7 @@ public class Rifle
     {
         Chamber = null;
         FuseUp = fuseUp;
-        RifleMag = new Magazine(magazine);
+        RifleMag = magazine;
     }
 
     public bool IsLoaded()
