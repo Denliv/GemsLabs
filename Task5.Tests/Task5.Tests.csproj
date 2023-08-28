@@ -1,0 +1,139 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+        <PackageReference Include="coverlet.collector" Version="3.1.2">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="xunit" Version="2.5.1-pre.20" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.5.1-pre.10">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Task5\Task5.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="..\..\TestEngine\MyUnit\MyUnit\Attributes\MyAttribute.cs">
+        <Link>MyUnit\Attributes\MyAttribute.cs</Link>
+      </Compile>
+      <Compile Include="..\..\TestEngine\MyUnit\MyUnit\Attributes\MyFactAttribute.cs">
+        <Link>MyUnit\Attributes\MyFactAttribute.cs</Link>
+      </Compile>
+      <Compile Include="..\..\TestEngine\MyUnit\MyUnit\Attributes\MyInlineDataAttribute.cs">
+        <Link>MyUnit\Attributes\MyInlineDataAttribute.cs</Link>
+      </Compile>
+      <Compile Include="..\..\TestEngine\MyUnit\MyUnit\MyAssert.cs">
+        <Link>MyUnit\MyAssert.cs</Link>
+      </Compile>
+      <Compile Include="..\..\TestEngine\MyUnit\MyUnit\MyAssertTestFailureException.cs">
+        <Link>MyUnit\MyAssertTestFailureException.cs</Link>
+      </Compile>
+      <Compile Include="..\..\TestEngine\MyUnit\MyUnit\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs">
+        <Link>MyUnit\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.cs</Link>
+      </Compile>
+      <Compile Include="..\..\TestEngine\MyUnit\MyUnit\obj\Debug\net6.0\MyUnit.AssemblyInfo.cs">
+        <Link>MyUnit\obj\Debug\net6.0\MyUnit.AssemblyInfo.cs</Link>
+      </Compile>
+      <Compile Include="..\..\TestEngine\MyUnit\MyUnit\obj\Debug\net6.0\MyUnit.GlobalUsings.g.cs">
+        <Link>MyUnit\obj\Debug\net6.0\MyUnit.GlobalUsings.g.cs</Link>
+      </Compile>
+      <Compile Include="..\..\TestEngine\MyUnit\MyUnit\TestRunEventHandler.cs">
+        <Link>MyUnit\TestRunEventHandler.cs</Link>
+      </Compile>
+      <Compile Include="..\..\TestEngine\MyUnit\MyUnit\TestRunner.cs">
+        <Link>MyUnit\TestRunner.cs</Link>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\.idea\.idea.MyUnit.dir\.idea\indexLayout.xml">
+        <Link>MyUnit\.idea\.idea.MyUnit.dir\.idea\indexLayout.xml</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\.idea\.idea.MyUnit.dir\.idea\projectSettingsUpdater.xml">
+        <Link>MyUnit\.idea\.idea.MyUnit.dir\.idea\projectSettingsUpdater.xml</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\.idea\.idea.MyUnit.dir\.idea\vcs.xml">
+        <Link>MyUnit\.idea\.idea.MyUnit.dir\.idea\vcs.xml</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\.idea\.idea.MyUnit.dir\.idea\workspace.xml">
+        <Link>MyUnit\.idea\.idea.MyUnit.dir\.idea\workspace.xml</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\bin\Debug\net6.0\MyUnit.deps.json">
+        <Link>MyUnit\bin\Debug\net6.0\MyUnit.deps.json</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\bin\Debug\net6.0\MyUnit.dll">
+        <Link>MyUnit\bin\Debug\net6.0\MyUnit.dll</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\bin\Debug\net6.0\MyUnit.pdb">
+        <Link>MyUnit\bin\Debug\net6.0\MyUnit.pdb</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\MyUnit.csproj">
+        <Link>MyUnit\MyUnit.csproj</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\Debug\net6.0\MyUnit.AssemblyInfoInputs.cache">
+        <Link>MyUnit\obj\Debug\net6.0\MyUnit.AssemblyInfoInputs.cache</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\Debug\net6.0\MyUnit.assets.cache">
+        <Link>MyUnit\obj\Debug\net6.0\MyUnit.assets.cache</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\Debug\net6.0\MyUnit.csproj.AssemblyReference.cache">
+        <Link>MyUnit\obj\Debug\net6.0\MyUnit.csproj.AssemblyReference.cache</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\Debug\net6.0\MyUnit.csproj.CoreCompileInputs.cache">
+        <Link>MyUnit\obj\Debug\net6.0\MyUnit.csproj.CoreCompileInputs.cache</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\Debug\net6.0\MyUnit.csproj.FileListAbsolute.txt">
+        <Link>MyUnit\obj\Debug\net6.0\MyUnit.csproj.FileListAbsolute.txt</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\Debug\net6.0\MyUnit.dll">
+        <Link>MyUnit\obj\Debug\net6.0\MyUnit.dll</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\Debug\net6.0\MyUnit.GeneratedMSBuildEditorConfig.editorconfig">
+        <Link>MyUnit\obj\Debug\net6.0\MyUnit.GeneratedMSBuildEditorConfig.editorconfig</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\Debug\net6.0\MyUnit.pdb">
+        <Link>MyUnit\obj\Debug\net6.0\MyUnit.pdb</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\Debug\net6.0\refint\MyUnit.dll">
+        <Link>MyUnit\obj\Debug\net6.0\refint\MyUnit.dll</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\Debug\net6.0\ref\MyUnit.dll">
+        <Link>MyUnit\obj\Debug\net6.0\ref\MyUnit.dll</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\MyUnit.csproj.nuget.dgspec.json">
+        <Link>MyUnit\obj\MyUnit.csproj.nuget.dgspec.json</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\MyUnit.csproj.nuget.g.props">
+        <Link>MyUnit\obj\MyUnit.csproj.nuget.g.props</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\MyUnit.csproj.nuget.g.targets">
+        <Link>MyUnit\obj\MyUnit.csproj.nuget.g.targets</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\project.assets.json">
+        <Link>MyUnit\obj\project.assets.json</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\project.nuget.cache">
+        <Link>MyUnit\obj\project.nuget.cache</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\project.packagespec.json">
+        <Link>MyUnit\obj\project.packagespec.json</Link>
+      </Content>
+      <Content Include="..\..\TestEngine\MyUnit\MyUnit\obj\rider.project.restore.info">
+        <Link>MyUnit\obj\rider.project.restore.info</Link>
+      </Content>
+    </ItemGroup>
+
+</Project>
