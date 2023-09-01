@@ -48,9 +48,10 @@ public class RifleTest
     [MyFact]
     public void Rifle_WithoutFuse_Reload_TryShot_ResultUsedTheSameShellAsInChamber()
     {
-        Rifle rifle = new Rifle(new Magazine(1), false);
+        Magazine magazine = new Magazine(1);
+        Rifle rifle = new Rifle(magazine, false);
+        var bulletInChamber = magazine.Peek();
         rifle.Reload();
-        var bulletInChamber = rifle.Chamber;
         rifle.Shot(out var bulletUsed);
         Assert.Same(bulletInChamber, bulletUsed);
     }

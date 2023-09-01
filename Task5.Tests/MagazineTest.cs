@@ -19,7 +19,7 @@ public class MagazineTest
     {
         Magazine magazine = new Magazine();
         magazine.AddBullet(new Bullet());
-        MyAssert.True(1 == magazine.Ammo.Count);
+        MyAssert.True(1 == magazine.AmmoCount);
     }
     
     [MyInlineData(1)]
@@ -29,7 +29,7 @@ public class MagazineTest
     {
         Magazine magazine = new Magazine(n);
         magazine.AddBullet(new Bullet());
-        MyAssert.True(n + 1 == magazine.Ammo.Count);
+        MyAssert.True(n + 1 == magazine.AmmoCount);
     }
     
     [MyFact]

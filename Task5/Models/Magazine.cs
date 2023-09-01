@@ -5,8 +5,8 @@ namespace Task5.Models;
 public class Magazine
 {
     public int Capacity { get; private set; }
-
-    public Stack<Bullet> Ammo { get; private set; }
+    private readonly Stack<Bullet> _ammo;
+    public int AmmoCount => _ammo.Count;
 
     public Magazine() : this(0)
     {
@@ -16,7 +16,7 @@ public class Magazine
     {
         Capacity = 30;
         if (ammoCount < 0 || ammoCount > Capacity) throw new MagazineException();
-        Ammo = new Stack<Bullet>(Capacity);
+        _ammo = new Stack<Bullet>(Capacity);
         for (int i = 0; i < ammoCount; ++i)
         {
             AddBullet(new Bullet());
@@ -25,18 +25,22 @@ public class Magazine
 
     public Bullet? GetBullet()
     {
-        if (!Ammo.Any()) return null;
-        return Ammo.Pop();
+        return !_ammo.Any() ? null : _ammo.Pop();
     }
 
     public void AddBullet(Bullet bullet)
     {
-        if (Ammo.Count == Capacity) throw new MagazineException();
-        Ammo.Push(bullet);
+        if (_ammo.Count == Capacity) throw new MagazineException();
+        _ammo.Push(bullet);
+    }
+    
+    public Bullet? Peek()
+    {
+        return !_ammo.Any() ? null : _ammo.Peek();
     }
 
     public bool IsEmpty()
     {
-        return !Ammo.Any();
+        return !_ammo.Any();
     }
 }
